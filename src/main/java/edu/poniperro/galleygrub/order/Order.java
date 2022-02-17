@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order implements Comanda {
-    private Double total;
+    private Double total = 0d;
     private final List<Item> items = new ArrayList<Item>();
 
     public Order(){}
@@ -33,12 +33,13 @@ public class Order implements Comanda {
 
     @Override
     public double getTotal() {
+        total += items.stream().mapToDouble(Item::price).sum();
         return total;
     }
 
     @Override
-    public void updateTotal() {
-        total = items.stream().mapToDouble(Item::price).sum();
+    public void updateTotal(Double price) {
+        total += price;
     }
 
     @Override
