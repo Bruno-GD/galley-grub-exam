@@ -1,5 +1,6 @@
 package edu.poniperro.galleygrub;
 
+import edu.poniperro.galleygrub.extras.Extra;
 import edu.poniperro.galleygrub.items.Prices;
 import edu.poniperro.galleygrub.items.Item;
 import edu.poniperro.galleygrub.items.Product;
@@ -7,13 +8,10 @@ import edu.poniperro.galleygrub.order.Comanda;
 import edu.poniperro.galleygrub.order.Order;
 import edu.poniperro.galleygrub.receipt.Receipt;
 import edu.poniperro.galleygrub.receipt.Ticket;
-
-/*import edu.poniperro.galleygrub.extras.CheeseExtra;
-import edu.poniperro.galleygrub.extras.Extra;
+import edu.poniperro.galleygrub.extras.CheeseExtra;
 import edu.poniperro.galleygrub.extras.Regular;
 import edu.poniperro.galleygrub.extras.SauceExtra;
 import edu.poniperro.galleygrub.extras.SizeLargeExtra;
-*/
 
 /**
  *
@@ -197,7 +195,7 @@ public class App
          * total de Order (la comanda).
          *
          * El precio total de la comanda se guarda en Order.
-         *//*
+         */
 
         Extra regular = new Regular(); // suma el precio base
         Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
@@ -208,11 +206,11 @@ public class App
         cheese.setNextExtra(sauce);
         sauce.setNextExtra(size);
 
-        *//**
+        /**
          * Squidward Tentacles genera el recibo,
          * la app calcula el importe total de la comanda
          * y lo muestra en pantalla.
-         *//*
+         */
 
         System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
 
@@ -220,7 +218,7 @@ public class App
         receiptExtra.setChain(regular);
 
         receiptExtra.total();
-        receiptExtra.print();*/
+        receiptExtra.print();
     }
 
     public static void display(Product item) {
