@@ -1,5 +1,6 @@
 package edu.poniperro.galleygrub.extras;
 
+import edu.poniperro.galleygrub.items.Item;
 import edu.poniperro.galleygrub.items.Prices;
 import edu.poniperro.galleygrub.order.Comanda;
 
@@ -12,6 +13,11 @@ public class CheeseExtra extends Extra {
 
     @Override
     public void sumExtras(Comanda order) {
-        order.updateTotal(CHEESE_PRICE);
+        double cheeseSum = order.itemList().stream()
+                        .filter(item -> !item.isRegular() && item.extra().equals(CHEESE))
+                        .mapToDouble(item -> item.price() + CHEESE_PRICE)
+                        .sum();
+        order.updateTotal(cheeseSum);
+        nextExtra.ifPresent(extra -> extra.sumExtras(order));
     }
 }
