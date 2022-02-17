@@ -10,6 +10,6 @@ public interface Comanda {
     int size();
     List<Item> itemList();
     double getTotal();
-    void updateTotal();
+    void updateTotal(Double price);
     void display();
 }
