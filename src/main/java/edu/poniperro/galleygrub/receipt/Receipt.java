@@ -1,10 +1,12 @@
 package edu.poniperro.galleygrub.receipt;
 
+import edu.poniperro.galleygrub.extras.Extra;
 import edu.poniperro.galleygrub.order.Comanda;
 
 public class Receipt implements Ticket {
     private Double total = 0d;
     private final Comanda order;
+    private Extra firstExtra = null;
 
     public Receipt(Comanda order) {
         this.order = order;
@@ -16,8 +18,17 @@ public class Receipt implements Ticket {
     }
 
     @Override
+    public void setChain(Extra extra) {
+        firstExtra = extra;
+    }
+
+    @Override
+    public Extra getChain() {
+        return firstExtra;
+    }
+
+    @Override
     public double total() {
-        order.updateTotal();
         total = order.getTotal();
         return total;
     }
