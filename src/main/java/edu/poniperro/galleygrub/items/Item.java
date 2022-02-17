@@ -1,12 +1,21 @@
 package edu.poniperro.galleygrub.items;
 
+import java.util.Objects;
+
 public class Item implements Product {
     private final String name;
     private final Double price;
+    private String extra = null;
 
     public Item(String name, double price) {
         this.name = name;
         this.price = price;
+    }
+
+    public Item(String name, double price, String extra) {
+        this.name = name;
+        this.price = price + Prices.extras.get(extra);
+        this.extra = extra;
     }
 
     @Override
@@ -21,16 +30,31 @@ public class Item implements Product {
 
     @Override
     public String extra() {
-        return null;
+        return extra;
     }
 
     @Override
     public boolean isRegular() {
-        return false;
+        return extra() == null;
     }
 
     @Override
     public String toString() {
-        return String.format("%s....%.2f$", name, price);
+        return isRegular() ?
+                String.format("%s....%.2f$", name, price) :
+                String.format("%s w/ %s....%.2f$", name, extra, price);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return Objects.equals(name, item.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }
