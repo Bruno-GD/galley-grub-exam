@@ -15,7 +15,7 @@ public class SizeLargeExtra extends Extra {
     public void sumExtras(Comanda order) {
         double sizeLargeSum = order.itemList().stream()
                 .filter(item -> !item.isRegular() && item.extra().equals(SIZE_LARGE))
-                .mapToDouble(item -> item.price() + SIZE_PRICE)
+                .mapToDouble(item -> SIZE_PRICE)
                 .sum();
         order.updateTotal(sizeLargeSum);
         nextExtra.ifPresent(extra -> extra.sumExtras(order));

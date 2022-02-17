@@ -15,7 +15,7 @@ public class SauceExtra extends Extra {
     public void sumExtras(Comanda order) {
         double sauceSum = order.itemList().stream()
                 .filter(item -> !item.isRegular() && item.extra().equals(SAUCE))
-                .mapToDouble(item -> item.price() + SAUCE_PRICE)
+                .mapToDouble(item -> SAUCE_PRICE)
                 .sum();
         order.updateTotal(sauceSum);
         nextExtra.ifPresent(extra -> extra.sumExtras(order));

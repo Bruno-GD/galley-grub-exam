@@ -7,7 +7,6 @@ public class Regular extends Extra {
     @Override
     public void sumExtras(Comanda order) {
         double regularSum = order.itemList().stream()
-                        .filter(Item::isRegular)
                         .mapToDouble(Item::price)
                         .sum();
         order.updateTotal(regularSum);

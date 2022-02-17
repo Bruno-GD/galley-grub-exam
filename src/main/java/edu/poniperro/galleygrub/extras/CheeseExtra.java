@@ -15,7 +15,7 @@ public class CheeseExtra extends Extra {
     public void sumExtras(Comanda order) {
         double cheeseSum = order.itemList().stream()
                         .filter(item -> !item.isRegular() && item.extra().equals(CHEESE))
-                        .mapToDouble(item -> item.price() + CHEESE_PRICE)
+                        .mapToDouble(item -> CHEESE_PRICE)
                         .sum();
         order.updateTotal(cheeseSum);
         nextExtra.ifPresent(extra -> extra.sumExtras(order));
