@@ -165,7 +165,7 @@ public class App
          * Buble Fish sigue zampando
          * y realiza una comanda cargada
          * de extras.
-         *//*
+         */
 
         order = new Order();
 
@@ -181,7 +181,7 @@ public class App
         order.display();
 
 
-        *//**
+        /**
          * Define el importe a cargar por cada extra.
          *
          * Configura los tipos de Extras:
