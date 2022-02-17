@@ -146,7 +146,7 @@ public class App
          * NO ACTUALICES EL PRECIO DEL ITEM
          * con el cargo extra
          * pues eso lo haremos con otro componente.
-         *//*
+         */
 
         System.out.print("\n\t --- GALLEY GRUB ---  \n");
 
@@ -161,7 +161,7 @@ public class App
         soda = new Item("Seafoam Soda", 1.00, "large");
         display(soda);
 
-        *//**
+        /**
          * Buble Fish sigue zampando
          * y realiza una comanda cargada
          * de extras.
