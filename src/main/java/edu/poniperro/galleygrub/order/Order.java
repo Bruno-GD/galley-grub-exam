@@ -18,7 +18,7 @@ public class Order implements Comanda {
 
     @Override
     public void addItem(String name, Double price, String extra) {
-        // TODO
+        items.add(new Item(name, price, extra));
     }
 
     @Override
