@@ -38,7 +38,7 @@ public class Order implements Comanda {
 
     @Override
     public void updateTotal() {
-        // TODO
+        total = items.stream().mapToDouble(Item::price).sum();
     }
 
     @Override
