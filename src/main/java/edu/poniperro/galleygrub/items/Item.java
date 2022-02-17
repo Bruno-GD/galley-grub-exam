@@ -14,7 +14,7 @@ public class Item implements Product {
 
     public Item(String name, double price, String extra) {
         this.name = name;
-        this.price = price + Prices.extras.get(extra);
+        this.price = price;
         this.extra = extra;
     }
 
@@ -42,7 +42,7 @@ public class Item implements Product {
     public String toString() {
         return isRegular() ?
                 String.format("%s....%.2f$", name, price) :
-                String.format("%s w/ %s....%.2f$", name, extra, price);
+                String.format("%s w/ %s....%.2f$ + %.2f$", name, extra, price, Prices.extras.get(extra));
     }
 
     @Override
