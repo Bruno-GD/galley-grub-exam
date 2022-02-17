@@ -1,13 +1,14 @@
 package edu.poniperro.galleygrub;
 
 import edu.poniperro.galleygrub.items.Prices;
+import edu.poniperro.galleygrub.items.Item;
+import edu.poniperro.galleygrub.items.Product;
+
 /*import edu.poniperro.galleygrub.extras.CheeseExtra;
 import edu.poniperro.galleygrub.extras.Extra;
 import edu.poniperro.galleygrub.extras.Regular;
 import edu.poniperro.galleygrub.extras.SauceExtra;
 import edu.poniperro.galleygrub.extras.SizeLargeExtra;
-import edu.poniperro.galleygrub.items.Item;
-import edu.poniperro.galleygrub.items.Product;
 import edu.poniperro.galleygrub.order.Comanda;
 import edu.poniperro.galleygrub.order.Order;
 import edu.poniperro.galleygrub.receipt.Receipt;
@@ -71,7 +72,7 @@ public class App
          * de tipo Item.
          */
 
-        /*System.out.print("\n\t --- GALLEY GRUB ---  \n");
+        System.out.print("\n\t --- GALLEY GRUB ---  \n");
 
         Product patty = new Item("Krabby Patty", 1.25);
         display(patty);
@@ -84,7 +85,7 @@ public class App
         Product soda = new Item("Seafoam Soda", 1.00);
         display(soda);
 
-        *//**
+        /**
          * Bubble Bass llega al restaurante
          * y hace una comanda muy simple.
          * Quiere todo lo que hay en el menu
@@ -221,7 +222,7 @@ public class App
         receiptExtra.print();*/
     }
 
-    /*public static void display(Product item) {
+    public static void display(Product item) {
         System.out.print("\t" + item.toString() + "\n");
-    }*/
+    }
 }
