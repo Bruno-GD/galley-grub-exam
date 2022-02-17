@@ -5,14 +5,15 @@ import edu.poniperro.galleygrub.items.Item;
 import edu.poniperro.galleygrub.items.Product;
 import edu.poniperro.galleygrub.order.Comanda;
 import edu.poniperro.galleygrub.order.Order;
+import edu.poniperro.galleygrub.receipt.Receipt;
+import edu.poniperro.galleygrub.receipt.Ticket;
 
 /*import edu.poniperro.galleygrub.extras.CheeseExtra;
 import edu.poniperro.galleygrub.extras.Extra;
 import edu.poniperro.galleygrub.extras.Regular;
 import edu.poniperro.galleygrub.extras.SauceExtra;
 import edu.poniperro.galleygrub.extras.SizeLargeExtra;
-import edu.poniperro.galleygrub.receipt.Receipt;
-import edu.poniperro.galleygrub.receipt.Ticket;*/
+*/
 
 /**
  *
@@ -126,13 +127,13 @@ public class App
          * Squidward Tentacles genera el recibo,
          * la app calcula el importe total de la comanda
          * y lo muestra en pantalla.
-         *//*
+         */
 
         Ticket receipt = new Receipt(order);
         receipt.total();
         receipt.print();
 
-        *//**
+        /**
          * Eugene H. Krabs quiere obtener un margen
          * de beneficio extra y decide cargar
          * por los extras.
