@@ -33,7 +33,6 @@ public class Order implements Comanda {
 
     @Override
     public double getTotal() {
-        total += items.stream().mapToDouble(Item::price).sum();
         return total;
     }
 
