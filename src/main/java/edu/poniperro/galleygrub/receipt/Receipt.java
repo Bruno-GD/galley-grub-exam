@@ -29,18 +29,18 @@ public class Receipt implements Ticket {
 
     @Override
     public double total() {
-        total = order.getTotal();
-        return total;
+        if (getChain() != null) sumExtrasCharge();
+        return order.getTotal();
     }
 
     @Override
     public void sumExtrasCharge() {
-        // TODO
+        getChain().sumExtras(order);
     }
 
     @Override
     public void print() {
         order.display();
-        System.out.printf("\tTOTAL --------> %.2f$\n", total);
+        System.out.printf("\tTOTAL --------> %.2f$\n", order.getTotal());
     }
 }
