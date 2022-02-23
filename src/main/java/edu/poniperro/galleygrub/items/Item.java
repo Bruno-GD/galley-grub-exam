@@ -50,11 +50,11 @@ public class Item implements Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
-        return Objects.equals(name, item.name);
+        return Objects.equals(this.hashCode(), item.hashCode());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, extra);
     }
 }
