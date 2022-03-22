@@ -2,6 +2,7 @@ package edu.poniperro.galleygrub.order;
 
 import edu.poniperro.galleygrub.items.Item;
 import edu.poniperro.galleygrub.items.ItemFactory;
+import edu.poniperro.galleygrub.items.Prices;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class Order implements Comanda {
     }
 
     @Override
-    public void addItem(String name, Double price, String extra) {
+    public void addItem(String name, Double price, Prices extra) {
         items.add(ItemFactory.getItem(name, price, extra));
     }
 

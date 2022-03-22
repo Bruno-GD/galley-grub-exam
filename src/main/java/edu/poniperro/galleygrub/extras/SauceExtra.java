@@ -8,13 +8,13 @@ public class SauceExtra extends Extra {
     private Double SAUCE_PRICE;
 
     public SauceExtra() {
-        SAUCE_PRICE = Prices.extras.get(SAUCE);
+        SAUCE_PRICE = Prices.SAUCE.getPrice();
     }
 
     @Override
     public void sumExtras(Comanda order) {
         double sauceSum = order.itemList().stream()
-                .filter(item -> !item.isRegular() && item.extra().equals(SAUCE))
+                .filter(item -> !item.isRegular() && item.extra() == Prices.SAUCE)
                 .mapToDouble(item -> SAUCE_PRICE)
                 .sum();
         order.updateTotal(sauceSum);

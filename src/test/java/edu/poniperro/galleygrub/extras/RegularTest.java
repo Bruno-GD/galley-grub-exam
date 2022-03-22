@@ -1,5 +1,6 @@
 package edu.poniperro.galleygrub.extras;
 
+import edu.poniperro.galleygrub.items.Prices;
 import edu.poniperro.galleygrub.order.Order;
 import edu.poniperro.galleygrub.receipt.Receipt;
 import org.junit.jupiter.api.Test;
@@ -16,11 +17,11 @@ class RegularTest {
 
         order = new Order();
 
-        order.addItem("Krabby Patty", 1.25, "cheese");
-        order.addItem("Coral Bits", 1.00, "medium");
-        order.addItem("Kelp Rings", 1.50, "sauce");
-        order.addItem("Golden Loaf", 2.00, "sauce");
-        order.addItem("Seafoam Soda", 1.00, "large");
+        order.addItem("Krabby Patty", 1.25, Prices.CHEESE);
+        order.addItem("Coral Bits", 1.00, Prices.MEDIUM);
+        order.addItem("Kelp Rings", 1.50, Prices.SAUCE);
+        order.addItem("Golden Loaf", 2.00, Prices.SAUCE);
+        order.addItem("Seafoam Soda", 1.00, Prices.LARGE);
 
         receipt = new Receipt(order);
 

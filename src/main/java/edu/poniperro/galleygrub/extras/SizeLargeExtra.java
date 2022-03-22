@@ -8,13 +8,13 @@ public class SizeLargeExtra extends Extra {
     private Double SIZE_PRICE;
 
     public SizeLargeExtra() {
-        SIZE_PRICE = Prices.extras.get(SIZE_LARGE);
+        SIZE_PRICE = Prices.LARGE.getPrice();
     }
 
     @Override
     public void sumExtras(Comanda order) {
         double sizeLargeSum = order.itemList().stream()
-                .filter(item -> !item.isRegular() && item.extra().equals(SIZE_LARGE))
+                .filter(item -> !item.isRegular() && item.extra() == Prices.LARGE)
                 .mapToDouble(item -> SIZE_PRICE)
                 .sum();
         order.updateTotal(sizeLargeSum);

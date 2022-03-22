@@ -50,7 +50,7 @@ public class App
          * del menu proporcionada.
          */
 
-        Prices.init_prices();
+        // Prices.init_prices();
 
         // formatea la salida de cada entrada del diccionario como prefieras
         System.out.print("\n\t --- PRICES ---  \n");
@@ -148,15 +148,15 @@ public class App
 
         System.out.print("\n\t --- GALLEY GRUB ---  \n");
 
-        patty = new Item("Krabby Patty", 1.25, "cheese");
+        patty = new Item("Krabby Patty", 1.25, Prices.CHEESE);
         display(patty);
-        bits = new Item("Coral Bits", 1.00, "medium");
+        bits = new Item("Coral Bits", 1.00, Prices.MEDIUM);
         display(bits);
-        rings = new Item("Kelp Rings", 1.50, "sauce");
+        rings = new Item("Kelp Rings", 1.50, Prices.SAUCE);
         display(rings);
-        loaf = new Item("Golden Loaf", 2.00, "sauce");
+        loaf = new Item("Golden Loaf", 2.00, Prices.SAUCE);
         display(loaf);
-        soda = new Item("Seafoam Soda", 1.00, "large");
+        soda = new Item("Seafoam Soda", 1.00, Prices.LARGE);
         display(soda);
 
         /**
@@ -167,12 +167,12 @@ public class App
 
         order = new Order();
 
-        order.addItem("Krabby Patty", 1.25, "cheese");
+        order.addItem("Krabby Patty", 1.25, Prices.CHEESE);
         order.addItem("Coral Bits", 1.00);
-        order.addItem("Kelp Rings", 1.50, "sauce");
-        order.addItem("Golden Loaf", 2.00, "sauce");
-        order.addItem("Seafoam Soda", 1.00, "large");
-        order.addItem("Coral Bits", 1.00, "large");
+        order.addItem("Kelp Rings", 1.50, Prices.SAUCE);
+        order.addItem("Golden Loaf", 2.00, Prices.SAUCE);
+        order.addItem("Seafoam Soda", 1.00, Prices.LARGE);
+        order.addItem("Coral Bits", 1.00, Prices.LARGE);
 
         // Utiliza el diccionario Prices para incluir
         // el precio de los extras en la salida por consola.

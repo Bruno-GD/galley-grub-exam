@@ -5,14 +5,14 @@ import java.util.Objects;
 public class Item implements Product {
     private final String name;
     private final Double price;
-    private String extra = null;
+    private Prices extra = null;
 
     public Item(String name, double price) {
         this.name = name;
         this.price = price;
     }
 
-    public Item(String name, double price, String extra) {
+    public Item(String name, double price, Prices extra) {
         this.name = name;
         this.price = price;
         this.extra = extra;
@@ -29,7 +29,7 @@ public class Item implements Product {
     }
 
     @Override
-    public String extra() {
+    public Prices extra() {
         return extra;
     }
 
@@ -42,7 +42,7 @@ public class Item implements Product {
     public String toString() {
         return isRegular() ?
                 String.format("%s....%.2f$", name, price) :
-                String.format("%s w/ %s....%.2f$ + %.2f$", name, extra, price, Prices.extras.get(extra));
+                String.format("%s w/ %s....%.2f$ + %.2f$", name, extra, price, extra.getPrice());
     }
 
     @Override

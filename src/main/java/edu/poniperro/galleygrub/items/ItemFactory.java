@@ -18,7 +18,7 @@ public class ItemFactory {
         }
     }
 
-    public static Item getItem(String name, Double price, String extra) {
+    public static Item getItem(String name, Double price, Prices extra) {
         final Integer hashName = Objects.hash(name, extra);
         if (itemMap.containsKey(hashName))
             return itemMap.get(hashName);
